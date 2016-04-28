@@ -85,7 +85,8 @@
                 controller: 'binShareFacebookController',
                 controllerAs: 'ctrl',
                 bindToController: true,
-                template: '<button type="button" class="bin-link" ng-click="ctrl.share()">' +
+                template: '<button type="button" class="bin-link" ng-click="ctrl.share()" ' +
+                'i18n code="bin.share.on.facebook.title" read-only title="{{::var}}">' +
                 '<span ng-show="ctrl.working"><i class="fa fa-spinner fa-spin fa-2x"></i></span>' +
                 '<span ng-hide="ctrl.working"><i class="fa fa-facebook-square fa-2x"></i></span>' +
                 '</button>'
@@ -101,7 +102,8 @@
                 controller: 'binShareTwitterController',
                 controllerAs: 'ctrl',
                 bindToController: true,
-                template: '<button type="button" class="bin-link" ng-click="ctrl.share()">' +
+                template: '<button type="button" class="bin-link" ng-click="ctrl.share()" ' +
+                'i18n code="bin.share.on.twitter.title" read-only title="{{::var}}">' +
                 '<span ng-show="ctrl.working"><i class="fa fa-spinner fa-spin fa-2x"></i></span>' +
                 '<span ng-hide="ctrl.working"><i class="fa fa-twitter-square fa-2x"></i></span>' +
                 '</button>'
@@ -118,7 +120,8 @@
                 controller: 'binShareLinkedinController',
                 controllerAs: 'ctrl',
                 bindToController: true,
-                template: '<button type="button" class="bin-link" ng-click="ctrl.share()">' +
+                template: '<button type="button" class="bin-link" ng-click="ctrl.share()" ' +
+                'i18n code="bin.share.on.linkedin.title" read-only title="{{::var}}">' +
                 '<span ng-show="ctrl.working"><i class="fa fa-spinner fa-spin fa-2x"></i></span>' +
                 '<span ng-hide="ctrl.working"><i class="fa fa-linkedin-square fa-2x"></i></span>' +
                 '</button>'

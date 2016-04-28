@@ -1,13 +1,25 @@
 {
   "msgs":{
     "nl":{
-      "bin.share.preparing.page": "De pagina wordt voorbereid voor social media. Dit kan enkele seconden duren."
+      "bin.share.preparing.page": "De pagina wordt voorbereid voor social media. Dit kan enkele seconden duren.",
+      "bin.share.on.facebook.title":  "Delen op Facebook",
+      "bin.share.on.twitter.title":  "Delen op Twitter",
+      "bin.share.on.linkedin.title":  "Delen op LinkedIn"
     }, "en":{
-      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds."
+      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds.",
+      "bin.share.on.facebook.title":  "Share on Facebook",
+      "bin.share.on.twitter.title":  "Share on Twitter",
+      "bin.share.on.linkedin.title":  "Share on LinkedIn"
     }, "fr":{
-      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds."
+      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds.",
+      "bin.share.on.facebook.title":  "Share on Facebook",
+      "bin.share.on.twitter.title":  "Share on Twitter",
+      "bin.share.on.linkedin.title":  "Share on LinkedIn"
     }, "de":{
-      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds."
+      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds.",
+      "bin.share.on.facebook.title":  "Share on Facebook",
+      "bin.share.on.twitter.title":  "Share on Twitter",
+      "bin.share.on.linkedin.title":  "Share on LinkedIn"
     }
   }
 }
