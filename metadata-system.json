@@ -1,0 +1,13 @@
+{
+  "msgs":{
+    "nl":{
+      "bin.share.preparing.page": "De pagina wordt voorbereid voor social media. Dit kan enkele seconden duren."
+    }, "en":{
+      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds."
+    }, "fr":{
+      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds."
+    }, "de":{
+      "bin.share.preparing.page": "Please wait while the page is being prepared for social media. This can take a few seconds."
+    }
+  }
+}
