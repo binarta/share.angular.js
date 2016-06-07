@@ -107,8 +107,8 @@ describe('bin.share', function () {
             var binStripHtmlTags, binTruncate;
 
             beforeEach(inject(function ($controller, $rootScope, $filter) {
-                binStripHtmlTags = $filter('binStripHtmlTags').andReturn('stripped');
-                binTruncate = $filter('binTruncate').andReturn('truncated');
+                binStripHtmlTags = $filter('binStripHtmlTags').and.returnValue('stripped');
+                binTruncate = $filter('binTruncate').and.returnValue('truncated');
 
                 scope = $rootScope.$new();
 
