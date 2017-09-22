@@ -1,12 +1,13 @@
 (function () {
-    angular.module('bin.share', ['config', 'angularx'])
+    angular.module('bin.share', ['config', 'angularx', 'notifications'])
         .service('binShare', ['$rootScope', '$location', '$document', '$compile', '$http', '$timeout', 'config', shareService])
         .controller('binShareFacebookController', ['$location', '$window', 'binShare', shareFacebookController])
         .controller('binShareTwitterController', ['$scope', '$location', '$window', 'binShare', shareTwitterController])
         .controller('binShareLinkedinController', ['$scope', '$location', '$window', '$filter', 'binShare', shareLinkedinController])
         .directive('binShareFacebook', shareFacebookDirective)
         .directive('binShareTwitter', shareTwitterDirective)
-        .directive('binShareLinkedin', shareLinkedinDirective);
+        .directive('binShareLinkedin', shareLinkedinDirective)
+        .component('binSocialIcons', new SocialIconsComponent());
 
     function shareService($rootScope, $location, $document, $compile, $http, $timeout, config) {
         this.getPrerenderedPage = function () {
@@ -140,5 +141,66 @@
             '<span ng-hide="ctrl.working"><i class="fa fa-linkedin-square"></i></span>' +
             '</button>'
         }
+    }
+    
+    function SocialIconsComponent() {
+        this.template = '<ul><li ng-repeat="provider in ::$ctrl.providers" i18n code="{{::provider.i18n}}" ' +
+            'default="{{provider.url}}" ng-show="provider.isVisible(var)">' +
+            '<a ng-href="{{var}}" target="_blank" ng-disabled="provider.isDisabled(var)">' +
+            '<i class="fa" ng-class="::provider.icon"></i></a>' +
+            '</li></ul>';
+        
+        this.controller = ['topicRegistry', function (topicRegistry) {
+            var $ctrl = this;
+            var editing;
+
+            $ctrl.$onInit = function () {
+                $ctrl.providers = [
+                    {
+                        i18n: 'social.link.facebook',
+                        icon: 'fa-facebook',
+                        url: 'https://www.facebook.com',
+                        isVisible: isVisible,
+                        isDisabled: isDisabled
+                    }, {
+                        i18n: 'social.link.twitter',
+                        icon: 'fa-twitter',
+                        url: 'https://twitter.com',
+                        isVisible: isVisible,
+                        isDisabled: isDisabled
+                    }, {
+                        i18n: 'social.link.google-plus',
+                        icon: 'fa-google-plus',
+                        url: 'https://plus.google.com',
+                        isVisible: isVisible,
+                        isDisabled: isDisabled
+                    }, {
+                        i18n: 'social.link.linkedin',
+                        icon: 'fa-linkedin',
+                        url: 'https://www.linkedin.com',
+                        isVisible: isVisible,
+                        isDisabled: isDisabled
+                    }
+                ];
+
+                function isVisible(value) {
+                    return (value && value !== this.url) || editing;
+                }
+
+                function isDisabled(value) {
+                    return !value || value === this.url;
+                }
+
+                function editModeListener(e) {
+                    editing = e;
+                }
+
+                topicRegistry.subscribe('edit.mode', editModeListener);
+
+                $ctrl.$onDestroy = function () {
+                    topicRegistry.unsubscribe('edit.mode', editModeListener);
+                };
+            };
+        }];
     }
 })();

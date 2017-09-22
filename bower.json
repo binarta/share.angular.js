@@ -1,16 +1,13 @@
 {
   "name": "binarta.share.angular",
-  "main": [
-    "./src/share.js",
-    "./metadata-system.json",
-    "./sources.json"
-  ],
+  "main": "./src/share.js",
   "dependencies": {
     "binarta.angularx": "0.*.*",
-    "binarta.config.angular": "0.*.*"
+    "binarta.config.angular": "0.*.*",
+    "binarta.notifications.angular": "1.*.*"
   },
   "devDependencies": {
-    "angular-mocks": "1.*.*"
+    "angular-mocks": "1.5.*"
   },
   "ignore": [
     "**/.*",
