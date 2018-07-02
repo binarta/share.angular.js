@@ -180,6 +180,12 @@
                         url: 'https://www.linkedin.com',
                         isVisible: isVisible,
                         isDisabled: isDisabled
+                    }, {
+                        i18n: 'social.link.instagram',
+                        icon: 'fa-instagram',
+                        url: 'https://www.instagram.com',
+                        isVisible: isVisible,
+                        isDisabled: isDisabled
                     }
                 ];
 
